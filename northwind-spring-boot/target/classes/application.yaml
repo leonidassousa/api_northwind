@@ -1,0 +1,59 @@
+
+project:
+  name: 'northwind'
+  version: '0.0.1-SNAPSHOT'
+  description: 'Demo project for Spring Boot'
+info:
+  build:
+    artifact: "northwind"
+    name: "Northwind - Projeto de exemplo para aprender JPA"
+    description: 'Demo project for Spring Boot'
+    version: '0.0.1-SNAPSHOT'
+
+application:
+  title: ${project.name}
+  version: ${project.version}
+
+#application:
+#  title: 'northwind'
+#  version: '0.0.1-SNAPSHOT'
+
+
+#spring.banner.charset=UTF-8
+#spring.banner.location=classpath:banner.txt
+
+spring:
+  output:
+    ansi:
+      enabled: ${SPRING_OUTPUT_ANSI_ENABLE}
+  banner:
+    charset: ${SPRING_BANNER_CHARSET}
+    location: ${SPRING_BANNER_LOCATION}
+
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    password: ''
+
+#Logging
+logging:
+  level:
+    br.senac.go: debug
+    org.springframework.web: info
+
+resource:
+  pessoa-post: M�todo respons�vel por criar uma nova pessoa.
+  pessoa-put: M�todo respons�vel por atualizar todo os dados de uma pessoa.
+  pessoa-patch: M�todo respons�vel por atualizar parte de um objeto pessoa.
+  pessoa-delete: M�todo respons�vel por deletetar o registro pessoa.
+  pessoa-delete-by-id: M�todo respons�vel por deletar um registro por identificador.
